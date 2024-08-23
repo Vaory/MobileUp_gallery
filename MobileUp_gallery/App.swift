@@ -11,7 +11,7 @@ import SwiftUI
 struct MobileUp_galleryApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+           AppView()
         }
     }
 }

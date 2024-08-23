@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @ObservedObject var loginViewModel: LoginViewModel
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -20,7 +23,9 @@ struct LoginView: View {
                 
                 Spacer()
 
-                NavigationLink(destination: VKLoginView()) {
+                Button(action: {
+                    loginViewModel.isAttemptingLogin = true
+                }) {
                     Text("Вход через VK")
                         .frame(maxWidth: .infinity, minHeight: 52)
                         .background(Color.black)
@@ -36,8 +41,9 @@ struct LoginView: View {
     }
 }
 
+
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(loginViewModel: LoginViewModel())
     }
 }
