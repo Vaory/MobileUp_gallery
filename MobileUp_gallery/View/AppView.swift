@@ -14,7 +14,9 @@ struct AppView: View {
         VStack {
             if loginViewModel.isLoggedIn, let token = loginViewModel.token {
                 Text("Ваш токен: \(token)")
-                    .padding()
+                    
+            
+                
             } else if loginViewModel.isAttemptingLogin {
                 WebView(loginViewModel: loginViewModel)
                     .edgesIgnoringSafeArea(.all)

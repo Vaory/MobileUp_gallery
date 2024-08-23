@@ -26,4 +26,12 @@ class LoginViewModel: ObservableObject {
             self.isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         }
     }
+    
+    func logout() {
+        self.token = nil
+        self.isLoggedIn = false
+        self.isAttemptingLogin = false
+        UserDefaults.standard.removeObject(forKey: "VKAccessToken")
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+    }
 }
