@@ -59,6 +59,7 @@
 		749A29602C777A1C0085FD4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				749A29662C77C3CA0085FD4E /* AppView.swift */,
 				749A295A2C7594910085FD4E /* LoginView.swift */,
 				74DCBB532C7530B000EC706C /* WebView.swift */,
 			);
@@ -97,7 +98,6 @@
 				749A29602C777A1C0085FD4E /* View */,
 				749A295F2C7779FD0085FD4E /* ViewModel */,
 				74DCBB492C75302A00EC706C /* Assets.xcassets */,
-				749A29662C77C3CA0085FD4E /* AppView.swift */,
 				74DCBB4B2C75302A00EC706C /* Preview Content */,
 			);
 			path = MobileUp_gallery;
