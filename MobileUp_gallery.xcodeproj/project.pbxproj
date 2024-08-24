@@ -14,6 +14,9 @@
 		74BDD2D22C7935C6002DB59D /* ShareButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2D12C7935C6002DB59D /* ShareButtonModel.swift */; };
 		74BDD2D52C7935F2002DB59D /* ShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2D42C7935F2002DB59D /* ShareButtonView.swift */; };
 		74BDD2D72C793664002DB59D /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2D62C793664002DB59D /* LogoutButtonView.swift */; };
+		74BDD2E22C7A5316002DB59D /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2E12C7A5316002DB59D /* PhotosView.swift */; };
+		74BDD2E42C7A532A002DB59D /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2E32C7A532A002DB59D /* PhotosViewModel.swift */; };
+		74BDD2E62C7A5357002DB59D /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2E52C7A5357002DB59D /* PhotoModel.swift */; };
 		74DCBB462C75302800EC706C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DCBB452C75302800EC706C /* App.swift */; };
 		74DCBB4A2C75302A00EC706C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74DCBB492C75302A00EC706C /* Assets.xcassets */; };
 		74DCBB4D2C75302A00EC706C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74DCBB4C2C75302A00EC706C /* Preview Assets.xcassets */; };
@@ -28,6 +31,9 @@
 		74BDD2D12C7935C6002DB59D /* ShareButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonModel.swift; sourceTree = "<group>"; };
 		74BDD2D42C7935F2002DB59D /* ShareButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonView.swift; sourceTree = "<group>"; };
 		74BDD2D62C793664002DB59D /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
+		74BDD2E12C7A5316002DB59D /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
+		74BDD2E32C7A532A002DB59D /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		74BDD2E52C7A5357002DB59D /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		74DCBB422C75302800EC706C /* MobileUp_gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUp_gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DCBB452C75302800EC706C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		74DCBB492C75302A00EC706C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				749A29622C77B09D0085FD4E /* LoginViewModel.swift */,
+				74BDD2E32C7A532A002DB59D /* PhotosViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -65,10 +72,10 @@
 		749A29602C777A1C0085FD4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				74BDD2E02C7A52FC002DB59D /* PhotosView */,
 				749A29662C77C3CA0085FD4E /* AppView.swift */,
 				749A295A2C7594910085FD4E /* LoginView.swift */,
 				74DCBB532C7530B000EC706C /* WebView.swift */,
-				74BDD2D32C7935D5002DB59D /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -77,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				74BDD2D12C7935C6002DB59D /* ShareButtonModel.swift */,
+				74BDD2E52C7A5357002DB59D /* PhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,6 +96,14 @@
 				74BDD2D62C793664002DB59D /* LogoutButtonView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		74BDD2E02C7A52FC002DB59D /* PhotosView */ = {
+			isa = PBXGroup;
+			children = (
+				74BDD2E12C7A5316002DB59D /* PhotosView.swift */,
+			);
+			path = PhotosView;
 			sourceTree = "<group>";
 		};
 		74DCBB392C75302800EC706C = {
@@ -110,6 +126,7 @@
 		74DCBB442C75302800EC706C /* MobileUp_gallery */ = {
 			isa = PBXGroup;
 			children = (
+				74BDD2D32C7935D5002DB59D /* Components */,
 				74DCBB452C75302800EC706C /* App.swift */,
 				749A29612C777A7F0085FD4E /* Model */,
 				749A29602C777A1C0085FD4E /* View */,
@@ -204,7 +221,10 @@
 				74BDD2D72C793664002DB59D /* LogoutButtonView.swift in Sources */,
 				749A29672C77C3CA0085FD4E /* AppView.swift in Sources */,
 				749A295B2C7594910085FD4E /* LoginView.swift in Sources */,
+				74BDD2E22C7A5316002DB59D /* PhotosView.swift in Sources */,
 				749A29632C77B09D0085FD4E /* LoginViewModel.swift in Sources */,
+				74BDD2E42C7A532A002DB59D /* PhotosViewModel.swift in Sources */,
+				74BDD2E62C7A5357002DB59D /* PhotoModel.swift in Sources */,
 				74DCBB542C7530B000EC706C /* WebView.swift in Sources */,
 				74BDD2D52C7935F2002DB59D /* ShareButtonView.swift in Sources */,
 			);

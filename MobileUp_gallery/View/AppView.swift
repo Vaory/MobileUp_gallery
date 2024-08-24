@@ -13,9 +13,11 @@ struct AppView: View {
     var body: some View {
         VStack {
             if loginViewModel.isLoggedIn, let token = loginViewModel.token {
-                Text("Ваш токен: \(token)")
-                    
-            
+                
+                LogoutButtonView()
+                
+                PhotosView()
+        
                 
             } else if loginViewModel.isAttemptingLogin {
                 WebView(loginViewModel: loginViewModel)
