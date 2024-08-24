@@ -19,11 +19,12 @@ struct WebView: UIViewRepresentable {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
         
-        let redirectUri = "https://oauth.vk.com/blank.html"
+        let redirectUrl = "https://oauth.vk.com/blank.html"
         let display = "mobile"
         let responseType = "token"
+        let scope = "photos,video"
         
-        let authURLString = "https://oauth.vk.com/authorize?client_id=\(52179604)&display=\(display)&redirect_uri=\(redirectUri)&response_type=\(responseType)&v=5.131"
+        let authURLString = "https://oauth.vk.com/authorize?client_id=\(52179604)&display=\(display)&redirect_uri=\(redirectUrl)&scope=\(scope)&response_type=\(responseType)&v=5.131"
         
         if let authURL = URL(string: authURLString) {
             let request = URLRequest(url: authURL)

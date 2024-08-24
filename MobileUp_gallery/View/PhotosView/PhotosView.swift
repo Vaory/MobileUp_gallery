@@ -11,8 +11,8 @@ struct PhotosView: View {
     @StateObject private var viewModel = PhotosViewModel()
     
     let columns = [
-        GridItem(.flexible(), spacing: 4),
-        GridItem(.flexible(), spacing: 4)
+        GridItem(.fixed(185), spacing: 4),
+        GridItem(.fixed(185), spacing: 4)
     ]
     
     var body: some View {
@@ -20,16 +20,16 @@ struct PhotosView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 4) {
                     ForEach(viewModel.photos) { photo in
-                        VStack {
+                        NavigationLink(destination: PhotoDetailView(photo: photo)) {
                             Image(uiImage: photo.image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 185, height: 185)
                                 .clipped()
                         }
-                        .background(Color.white)
                     }
                 }
+                .padding(.horizontal, 4)
             }
             .onAppear {
                 if let token = UserDefaults.standard.string(forKey: "VKAccessToken") {
@@ -38,6 +38,7 @@ struct PhotosView: View {
                     print("Access token not found")
                 }
             }
+            .navigationBarTitle("Photos", displayMode: .inline)
         }
     }
 }
