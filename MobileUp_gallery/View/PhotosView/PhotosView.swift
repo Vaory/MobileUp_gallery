@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct PhotosView: View {
     @StateObject private var viewModel = PhotosViewModel()
     
@@ -21,11 +22,16 @@ struct PhotosView: View {
                 LazyVGrid(columns: columns, spacing: 4) {
                     ForEach(viewModel.photos) { photo in
                         NavigationLink(destination: PhotoDetailView(photo: photo)) {
-                            Image(uiImage: photo.image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 185, height: 185)
-                                .clipped()
+                            AsyncImage(url: URL(string: photo.imageUrl)) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 185, height: 185)
+                                    .clipped()
+                            } placeholder: {
+                                ProgressView()
+                                    .frame(width: 185, height: 185)
+                            }
                         }
                     }
                 }

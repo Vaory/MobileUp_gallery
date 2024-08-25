@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Photo: Identifiable {
     let id = UUID()
-    let image: UIImage
+    let imageUrl: String
     let uploadDate: String
 }
-

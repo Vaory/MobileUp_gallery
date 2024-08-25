@@ -13,10 +13,15 @@ struct PhotoDetailView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image(uiImage: photo.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .navigationBarTitle("", displayMode: .inline)
+            AsyncImage(url: URL(string: photo.imageUrl)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .navigationBarTitle("", displayMode: .inline)
+            } placeholder: {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
             Spacer()
         }
         .background(Color.white)

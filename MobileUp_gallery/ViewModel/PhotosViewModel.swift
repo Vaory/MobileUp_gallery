@@ -41,25 +41,19 @@ class PhotosViewModel: ObservableObject {
                     for item in items {
                         // Найти URL изображения подходящего размера
                         if let sizes = item["sizes"] as? [[String: Any]],
-                           let urlStr = sizes.first(where: { $0["type"] as? String == "x" })?["url"] as? String,
-                           let url = URL(string: urlStr) {
+                           let urlStr = sizes.first(where: { $0["type"] as? String == "x" })?["url"] as? String {
                             
-                            // Загрузить изображение по URL
-                            if let imageData = try? Data(contentsOf: url),
-                               let image = UIImage(data: imageData) {
-                                
-                                // Получить дату публикации
-                                let timestamp = item["date"] as? TimeInterval ?? 0
-                                let date = Date(timeIntervalSince1970: timestamp)
-                                let dateFormatter = DateFormatter()
-                                dateFormatter.dateStyle = .medium
-                                dateFormatter.timeStyle = .none
-                                let dateString = dateFormatter.string(from: date)
-                                
-                                // Создать объект Photo
-                                let photo = Photo(image: image, uploadDate: dateString)
-                                loadedPhotos.append(photo)
-                            }
+                            // Получить дату публикации
+                            let timestamp = item["date"] as? TimeInterval ?? 0
+                            let date = Date(timeIntervalSince1970: timestamp)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateStyle = .medium
+                            dateFormatter.timeStyle = .none
+                            let dateString = dateFormatter.string(from: date)
+                            
+                            // Создать объект Photo с URL
+                            let photo = Photo(imageUrl: urlStr, uploadDate: dateString)
+                            loadedPhotos.append(photo)
                         }
                     }
                     

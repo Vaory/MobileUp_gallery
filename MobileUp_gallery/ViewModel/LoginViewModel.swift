@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Network
 
 class LoginViewModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
@@ -34,4 +35,14 @@ class LoginViewModel: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "VKAccessToken")
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
     }
+    func checkInternetConnection(completion: @escaping (Bool) -> Void) {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+        monitor.pathUpdateHandler = { path in
+            completion(path.status == .satisfied)
+            monitor.cancel()
+        }
+        monitor.start(queue: queue)
+    }
 }
+

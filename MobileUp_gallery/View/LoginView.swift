@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @ObservedObject var loginViewModel: LoginViewModel
+    @State private var showAlert = false
     
     var body: some View {
         NavigationView {
@@ -22,9 +23,17 @@ struct LoginView: View {
                     .padding(.top, 160)
                 
                 Spacer()
-
+                
                 Button(action: {
-                    loginViewModel.isAttemptingLogin = true
+                    loginViewModel.checkInternetConnection { isConnected in
+                        DispatchQueue.main.async {
+                            if isConnected {
+                                loginViewModel.isAttemptingLogin = true
+                            } else {
+                                showAlert = true
+                            }
+                        }
+                    }
                 }) {
                     Text("Вход через VK")
                         .frame(maxWidth: .infinity, minHeight: 52)
@@ -34,16 +43,19 @@ struct LoginView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 42)
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Ошибка подключения"), message: Text("Отсутствует интернет-соединение"), dismissButton: .default(Text("OK")))
+                }
             }
             .edgesIgnoringSafeArea(.all)
         }
         .navigationBarBackButtonHidden(true)
     }
-}
-
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(loginViewModel: LoginViewModel())
+    
+    
+    struct LoginView_Previews: PreviewProvider {
+        static var previews: some View {
+            LoginView(loginViewModel: LoginViewModel())
+        }
     }
 }
