@@ -38,7 +38,6 @@ struct PhotosView: View {
                     print("Access token not found")
                 }
             }
-            .navigationBarTitle("Photos", displayMode: .inline)
         }
     }
 }
