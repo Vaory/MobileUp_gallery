@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		744092662C7BD98700B4A350 /* VideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744092652C7BD98700B4A350 /* VideosView.swift */; };
+		744092692C7BD9DF00B4A350 /* MainViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744092682C7BD9DF00B4A350 /* MainViewHeader.swift */; };
 		749A295B2C7594910085FD4E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A295A2C7594910085FD4E /* LoginView.swift */; };
 		749A295E2C7770CD0085FD4E /* Tasks in Resources */ = {isa = PBXBuildFile; fileRef = 749A295D2C7770CD0085FD4E /* Tasks */; };
 		749A29632C77B09D0085FD4E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A29622C77B09D0085FD4E /* LoginViewModel.swift */; };
 		749A29672C77C3CA0085FD4E /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A29662C77C3CA0085FD4E /* AppView.swift */; };
 		74BDD2D22C7935C6002DB59D /* ShareButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2D12C7935C6002DB59D /* ShareButtonModel.swift */; };
 		74BDD2D52C7935F2002DB59D /* ShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2D42C7935F2002DB59D /* ShareButtonView.swift */; };
-		74BDD2D72C793664002DB59D /* LogoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2D62C793664002DB59D /* LogoutButtonView.swift */; };
 		74BDD2E22C7A5316002DB59D /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2E12C7A5316002DB59D /* PhotosView.swift */; };
 		74BDD2E42C7A532A002DB59D /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2E32C7A532A002DB59D /* PhotosViewModel.swift */; };
 		74BDD2E62C7A5357002DB59D /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BDD2E52C7A5357002DB59D /* PhotoModel.swift */; };
@@ -28,13 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		744092652C7BD98700B4A350 /* VideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosView.swift; sourceTree = "<group>"; };
+		744092682C7BD9DF00B4A350 /* MainViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewHeader.swift; sourceTree = "<group>"; };
 		749A295A2C7594910085FD4E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		749A295D2C7770CD0085FD4E /* Tasks */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tasks; sourceTree = "<group>"; };
 		749A29622C77B09D0085FD4E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		749A29662C77C3CA0085FD4E /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		74BDD2D12C7935C6002DB59D /* ShareButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonModel.swift; sourceTree = "<group>"; };
 		74BDD2D42C7935F2002DB59D /* ShareButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonView.swift; sourceTree = "<group>"; };
-		74BDD2D62C793664002DB59D /* LogoutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonView.swift; sourceTree = "<group>"; };
 		74BDD2E12C7A5316002DB59D /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
 		74BDD2E32C7A532A002DB59D /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 		74BDD2E52C7A5357002DB59D /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
@@ -60,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		744092672C7BD98E00B4A350 /* VideosView */ = {
+			isa = PBXGroup;
+			children = (
+				744092652C7BD98700B4A350 /* VideosView.swift */,
+			);
+			path = VideosView;
+			sourceTree = "<group>";
+		};
 		749A295C2C77709E0085FD4E /* GitScreenshots */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		749A29602C777A1C0085FD4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				744092672C7BD98E00B4A350 /* VideosView */,
 				74BDD2E02C7A52FC002DB59D /* PhotosView */,
 				749A29662C77C3CA0085FD4E /* AppView.swift */,
 				749A295A2C7594910085FD4E /* LoginView.swift */,
@@ -103,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				74BDD2D42C7935F2002DB59D /* ShareButtonView.swift */,
-				74BDD2D62C793664002DB59D /* LogoutButtonView.swift */,
 				74BDD2F82C7B8A0B002DB59D /* SegmentedControlerView.swift */,
+				744092682C7BD9DF00B4A350 /* MainViewHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -138,11 +149,11 @@
 		74DCBB442C75302800EC706C /* MobileUp_gallery */ = {
 			isa = PBXGroup;
 			children = (
-				74BDD2D32C7935D5002DB59D /* Components */,
 				74DCBB452C75302800EC706C /* App.swift */,
 				749A29612C777A7F0085FD4E /* Model */,
 				749A29602C777A1C0085FD4E /* View */,
 				749A295F2C7779FD0085FD4E /* ViewModel */,
+				74BDD2D32C7935D5002DB59D /* Components */,
 				74DCBB492C75302A00EC706C /* Assets.xcassets */,
 				74DCBB4B2C75302A00EC706C /* Preview Content */,
 			);
@@ -228,9 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744092662C7BD98700B4A350 /* VideosView.swift in Sources */,
 				74DCBB462C75302800EC706C /* App.swift in Sources */,
 				74BDD2D22C7935C6002DB59D /* ShareButtonModel.swift in Sources */,
-				74BDD2D72C793664002DB59D /* LogoutButtonView.swift in Sources */,
 				74BDD2F22C7B6979002DB59D /* VideoModel.swift in Sources */,
 				749A29672C77C3CA0085FD4E /* AppView.swift in Sources */,
 				749A295B2C7594910085FD4E /* LoginView.swift in Sources */,
@@ -242,6 +253,7 @@
 				74BDD2EE2C7A9F90002DB59D /* PhotoDetailView.swift in Sources */,
 				74BDD2E62C7A5357002DB59D /* PhotoModel.swift in Sources */,
 				74DCBB542C7530B000EC706C /* WebView.swift in Sources */,
+				744092692C7BD9DF00B4A350 /* MainViewHeader.swift in Sources */,
 				74BDD2D52C7935F2002DB59D /* ShareButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
