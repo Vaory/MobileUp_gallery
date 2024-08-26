@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailViewHeader: View {
     @ObservedObject var loginViewModel: LoginViewModel
     let date: String
+    let imageUrl: String
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
@@ -26,7 +27,7 @@ struct DetailViewHeader: View {
 
                 Spacer()
 
-                ShareButtonView()
+                ShareButtonView(imageUrl: imageUrl)
                     .padding(.trailing, 12)
             }
             .frame(height: 44)
@@ -39,5 +40,3 @@ struct DetailViewHeader: View {
         .frame(maxWidth: .infinity)
     }
 }
-
-

@@ -17,9 +17,9 @@ struct PhotoDetailView: View {
     var body: some View {
         VStack {
             
-            DetailViewHeader(loginViewModel: loginViewModel, date: photo.uploadDate)
+            DetailViewHeader(loginViewModel: loginViewModel, date: photo.uploadDate, imageUrl: photo.imageUrl)
             
-            Divider() 
+            Divider()
             
             Spacer()
             

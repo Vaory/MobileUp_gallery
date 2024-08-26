@@ -10,8 +10,7 @@ import SwiftUI
 struct ShareButtonView: View {
     
     @State private var isSharePresented = false
-    let customActivity = ShareButtonModel(title: "App Name", imageName: "Share_app_icon") {
-    }
+    let imageUrl: String
     
     var body: some View {
         Button(action: {
@@ -22,7 +21,13 @@ struct ShareButtonView: View {
                 .frame(width: 15, height: 19)
         })
         .sheet(isPresented: $isSharePresented, content: {
-            ActivityView(activityItems: ["test"], applicationActivities: [self.customActivity])
+            if let url = URL(string: imageUrl),
+               let data = try? Data(contentsOf: url),
+               let image = UIImage(data: data) {
+                ActivityView(activityItems: [image], applicationActivities: nil)
+            } else {
+                ActivityView(activityItems: [URL(string: imageUrl)!], applicationActivities: nil)
+            }
         })
         .padding()
     }
@@ -30,6 +35,6 @@ struct ShareButtonView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ShareButtonView()
+        ShareButtonView(imageUrl: "https://example.com/image.jpg")
     }
 }
