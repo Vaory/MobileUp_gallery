@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct SegmentedControlView: View {
     @State private var selectedSegment = 0
     

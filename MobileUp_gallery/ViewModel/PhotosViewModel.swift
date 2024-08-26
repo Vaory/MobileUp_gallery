@@ -45,7 +45,7 @@ class PhotosViewModel: ObservableObject {
                             let timestamp = item["date"] as? TimeInterval ?? 0
                             let date = Date(timeIntervalSince1970: timestamp)
                             let dateFormatter = DateFormatter()
-                            dateFormatter.dateStyle = .medium
+                            dateFormatter.dateStyle = .long
                             dateFormatter.timeStyle = .none
                             let dateString = dateFormatter.string(from: date)
                             let photo = Photo(imageUrl: urlStr, uploadDate: dateString)

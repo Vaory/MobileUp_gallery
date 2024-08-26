@@ -11,7 +11,7 @@ struct VideosView: View {
     @StateObject private var viewModel = VideosViewModel()
 
     var body: some View {
-        NavigationView {
+       
             ScrollView {
                 LazyVStack(spacing: 4) {
                     ForEach(viewModel.videos) { video in
@@ -48,7 +48,7 @@ struct VideosView: View {
                     print("Access token not found")
                 }
             }
-        }
+        
         .ignoresSafeArea(.all)
     }
 }

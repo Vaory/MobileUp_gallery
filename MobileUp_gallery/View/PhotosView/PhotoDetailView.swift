@@ -9,10 +9,17 @@ import SwiftUI
 
 struct PhotoDetailView: View {
     
+    @ObservedObject var loginViewModel: LoginViewModel
     let photo: Photo
+   
+    @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
         VStack {
+            
+            DetailViewHeader(loginViewModel: loginViewModel, date: photo.uploadDate)
+            
+            Divider() 
             
             Spacer()
             
@@ -28,6 +35,6 @@ struct PhotoDetailView: View {
             Spacer()
         }
         .background(Color.white)
-        .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
     }
 }

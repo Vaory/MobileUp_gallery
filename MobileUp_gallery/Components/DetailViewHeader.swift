@@ -9,12 +9,14 @@ import SwiftUI
 
 struct DetailViewHeader: View {
     @ObservedObject var loginViewModel: LoginViewModel
+    let date: String
+    @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
         VStack {
             HStack {
                 Button {
-                    //Действие для кнопки назад
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     Image("BackIcon")
                         .resizable()
@@ -30,7 +32,7 @@ struct DetailViewHeader: View {
             .frame(height: 44)
             .frame(maxWidth: .infinity)
             .overlay(
-                Text("MobileUP Gallery")
+                Text(date)
                     .font(.system(size: 17, weight: .semibold))
             )
         }
@@ -39,8 +41,3 @@ struct DetailViewHeader: View {
 }
 
 
-struct DetailViewHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailViewHeader(loginViewModel: LoginViewModel())
-    }
-}

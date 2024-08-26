@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct PhotosView: View {
     @StateObject private var viewModel = PhotosViewModel()
     
@@ -17,11 +16,11 @@ struct PhotosView: View {
     ]
     
     var body: some View {
-        NavigationView {
+        
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 4) {
                     ForEach(viewModel.photos) { photo in
-                        NavigationLink(destination: PhotoDetailView(photo: photo)) {
+                        NavigationLink(destination: PhotoDetailView(loginViewModel: LoginViewModel(), photo: photo)) {
                             AsyncImage(url: URL(string: photo.imageUrl)) { image in
                                 image
                                     .resizable()
@@ -44,7 +43,7 @@ struct PhotosView: View {
                     print("Access token not found")
                 }
             }
-        }
+        
     }
 }
 

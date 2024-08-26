@@ -14,7 +14,7 @@ struct AppView: View {
         VStack {
             if loginViewModel.isLoggedIn, let token = loginViewModel.token {
                 
-               MainViewHeader(loginViewModel: loginViewModel)
+               GalleryView(loginViewModel: loginViewModel)
                 
             } else if loginViewModel.isAttemptingLogin {
                 WebView(loginViewModel: loginViewModel)
