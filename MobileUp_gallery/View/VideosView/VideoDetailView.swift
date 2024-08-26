@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct VideoDetailView: View {
+    @ObservedObject var loginViewModel: LoginViewModel
+    @Environment(\.presentationMode) private var presentationMode
     
         let video: Video
         
         var body: some View {
             VStack {
+                DetailViewHeader(loginViewModel: loginViewModel, date: video.title, imageUrl: video.thumbnailUrl)
+                
+                Divider()
                 
                 Spacer()
                 
@@ -28,6 +33,7 @@ struct VideoDetailView: View {
                 Spacer()
             }
             .background(Color.white)
-            .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
         }
     }
+
