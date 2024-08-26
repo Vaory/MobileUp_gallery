@@ -10,7 +10,7 @@ https://www.notion.so/MobileUp-gallery-test-case-Demichev-Mikhail-9c0c2cfb3c6b45
 
 # Использованный стэк технологий:
 - Язык: Swift5, Xcode
-- Фреймворки: SwiftUI, UIKit, Network, Wbkit, Combine
+- Фреймворки: SwiftUI, UIKit, Network, WebKit, Combine
 - Архитектура: MVVM 
 - Ui, дизайн, верстка: Figma
 - Функционал приложения - ТЗ
@@ -29,21 +29,20 @@ https://www.notion.so/MobileUp-gallery-test-case-Demichev-Mikhail-9c0c2cfb3c6b45
 
 ## Главный экран приложения
 Кнопка выход стирает токен и возвращает на первый экран.
-к сожалению по причине долгой модерации от ВК мое приложение, по независящим от меня причинам не получает токен с правами доступа к видео)
-Поэтому в скринах прикрепил отображение фото галлереи и мок сборку отображения видео.
-При нажатие на любой элемент галлереи отображается окно детального просмотра
+При нажатие на любой элемент галлереи отображается окна детального просмотра для фото или видео.
 
 <p float="left">
   <img src="GitScreenshots/MainView1.png" width="200" />
-  <img src="GitScreenshots/MainView3.png" width="200" />
   <img src="GitScreenshots/MainView2.png" width="200" />
 </p>
 
 ## Экран "Детального просмотра" для медиа
-Кнопка назад - возвращает обратно в галлерею, кнопка Share - позволяет взаимодейстовать с файлом
-
+Кнопка назад - возвращает обратно в галлерею, кнопка Share - позволяет взаимодейстовать с файлом.
+При нажатии на кнопку плей в детальном вью видео окрываеться полноразмерный WebView с воспроизведенем видео и элементами управления 
 <p float="left">
   <img src="GitScreenshots/DetailVIew1.png" width="200" />
+  <img src="GitScreenshots/DetailView2.png" width="200" />
+  <img src="GitScreenshots/DetailView3.png" width="200" />
 </p>
 
 
