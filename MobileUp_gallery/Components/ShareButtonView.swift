@@ -17,7 +17,7 @@ struct ShareButtonView: View {
         Button(action: {
             self.isSharePresented = true
         }, label: {
-            Image("Share_button")
+            Image("ShareIcon")
                 .resizable()
                 .frame(width: 15, height: 19)
         })

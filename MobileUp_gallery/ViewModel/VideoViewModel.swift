@@ -39,7 +39,6 @@ class VideosViewModel: ObservableObject {
                         return
                     }
                     
-                    // Проверка на наличие данных в ответе
                     if let response = json["response"] as? [String: Any],
                        let items = response["items"] as? [[String: Any]] {
                         

@@ -39,19 +39,15 @@ class PhotosViewModel: ObservableObject {
                     var loadedPhotos: [Photo] = []
                     
                     for item in items {
-                        // Найти URL изображения подходящего размера
                         if let sizes = item["sizes"] as? [[String: Any]],
                            let urlStr = sizes.first(where: { $0["type"] as? String == "x" })?["url"] as? String {
                             
-                            // Получить дату публикации
                             let timestamp = item["date"] as? TimeInterval ?? 0
                             let date = Date(timeIntervalSince1970: timestamp)
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateStyle = .medium
                             dateFormatter.timeStyle = .none
                             let dateString = dateFormatter.string(from: date)
-                            
-                            // Создать объект Photo с URL
                             let photo = Photo(imageUrl: urlStr, uploadDate: dateString)
                             loadedPhotos.append(photo)
                         }

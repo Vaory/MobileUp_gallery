@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
+    
     let photo: Photo
     
     var body: some View {
         VStack {
+            
             Spacer()
+            
             AsyncImage(url: URL(string: photo.imageUrl)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .navigationBarTitle("", displayMode: .inline)
             } placeholder: {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            
             Spacer()
         }
         .background(Color.white)
