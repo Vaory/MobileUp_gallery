@@ -19,7 +19,7 @@ struct SegmentedControlView: View {
             if selectedSegment == 0 {
                 PhotosView()
             } else {
-                VideosView()
+                VideosView(loginViewModel: LoginViewModel())
             }
         }
     }
