@@ -19,8 +19,15 @@ struct MainViewHeader: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .overlay(
                         HStack {
+                            
                             Spacer()
-                            ShareButtonView()
+                            
+                            Button(action: {
+                                loginViewModel.logout()
+                            }, label: {
+                                Text("Выход")
+                                    .foregroundColor(.black)
+                            })
                             .padding(.trailing, 12)
                         }
                     )
